@@ -8,7 +8,7 @@
 		<version>3.1.10</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.gabito</groupId>
+	<groupId>com.gibito</groupId>
 	<artifactId>config_server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>config_server</name>
