@@ -5,6 +5,9 @@ import com.gibito.department_service.repository.DepartmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
+
 @Service
 public class DepartmentServiceImp implements  DepartmentService{
 
@@ -21,6 +24,12 @@ departmentRepository.save(department);
     public String updateDepartment(String name, String address, String code, Long id) {
         departmentRepository.updateById(name, address, code, id);
         return "RECORD UPDATED";
+    }
+
+    @Override
+    public Department findById(Long id) {
+      return departmentRepository.findById(id).get();
+
     }
 
 
