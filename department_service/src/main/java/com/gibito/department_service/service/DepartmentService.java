@@ -1,4 +1,7 @@
 package com.gibito.department_service.service;
 
-public class DepartmentService {
+import com.gibito.department_service.model.Department;
+
+public interface DepartmentService {
+    void addDepartment(Department department);
 }
