@@ -3,9 +3,7 @@ package com.gibito.department_service.controller;
 import com.gibito.department_service.model.Department;
 import com.gibito.department_service.service.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class DepartmentController {
@@ -16,5 +14,10 @@ public class DepartmentController {
     @PostMapping("/department")
     public void addDepartment(@RequestBody Department department){
         departmentService.addDepartment(department);
+    }
+
+    @PutMapping("/department/{id}")
+    public void updateDepartment(  @PathVariable("id") Long id, @RequestBody Department department){
+         departmentService.updateDepartment(department.getName(), department.getAddress(), department.getCode(), id);
     }
 }
