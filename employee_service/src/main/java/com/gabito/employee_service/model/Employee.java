@@ -1,4 +1,4 @@
-package com.gibito.department_service.model;
+package com.gabito.employee_service.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -6,20 +6,20 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Builder
-@Data
+@Entity
+@Table
 @AllArgsConstructor
 @NoArgsConstructor
-@Table
-@Entity
-public class Department {
+@Builder
+@Data
+public class Employee {
 
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     @Id
     private Long id;
     private String name;
     private String address;
-    private String code;
-    private Long employeeId;
-
+    @Column(unique = true)
+    private String email;
 }
