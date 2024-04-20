@@ -1,7 +1,7 @@
 package com.gabito.employee_service.controller;
 
 import com.gabito.employee_service.config.DepartmentFeignClient;
-import com.gabito.employee_service.model.Employee;
+import com.gabito.employee_service.dto.Request;
 import com.gabito.employee_service.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,7 +18,7 @@ public class EmployeeController {
     private DepartmentFeignClient departmentFeignClient;
 
     @PostMapping("/employee")
-    public void addEmployee(@RequestBody Employee employee){
-employeeService.addEmployee(employee);
+    public void addEmployee(@RequestBody Request request){
+employeeService.addEmployee(request);
     }
 }

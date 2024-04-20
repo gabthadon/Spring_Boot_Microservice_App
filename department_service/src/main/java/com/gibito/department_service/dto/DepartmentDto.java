@@ -1,13 +1,11 @@
-package com.gabito.employee_service.dto;
+package com.gibito.department_service.dto;
 
-import lombok.*;
+import lombok.Data;
 
 @Data
 public class DepartmentDto {
-
     private String name;
     private String address;
     private String code;
     private Long employeeId;
-
 }
