@@ -8,6 +8,10 @@ import com.gabito.employee_service.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 @Service
 public class EmployeeService {
 
@@ -36,5 +40,18 @@ departmentDto.setCode(request.getDepartmentCode());
 
 departmentFeignClient.addDepartment(departmentDto);
 
+    }
+
+
+
+    public Map<String, Object> findByEmployeeAndDepartmentId(Long id) {
+    DepartmentDto dpt = departmentFeignClient.findByEmployeeId(id);
+    Employee employee = employeeRepository.findById(id).get();
+
+    Map<String, Object> relatedRecords = new HashMap<>();
+    relatedRecords.put("department", dpt);
+    relatedRecords.put("employee", employee);
+
+    return relatedRecords;
     }
 }

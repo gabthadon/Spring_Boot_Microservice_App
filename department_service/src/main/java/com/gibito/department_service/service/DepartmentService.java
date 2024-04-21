@@ -28,10 +28,7 @@ public class DepartmentService {
     }
 
 
-    public Department findById(Long id) {
-      return departmentRepository.findById(id).get();
-
+    public Department findByEmployeeId(Long employeeId) {
+        return departmentRepository.findByEmployeeId(employeeId);
     }
-
-
 }

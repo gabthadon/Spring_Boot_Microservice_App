@@ -21,9 +21,10 @@ public class DepartmentController {
     public void updateDepartment(  @PathVariable("id") Long id, @RequestBody Department department){
          departmentService.updateDepartment(department.getName(), department.getAddress(), department.getCode(), id);
     }
-
-    @GetMapping("department/{id}")
-    public Department findById(@PathVariable("id") Long id){
-       return departmentService.findById(id);
-    }
+@GetMapping("/department/{employee_id}")
+    public Department findByEmployeeId(@PathVariable("employee_id") Long employee_id){
+        return departmentService.findByEmployeeId(employee_id);
 }
+
+}
+

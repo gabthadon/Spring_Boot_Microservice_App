@@ -12,4 +12,8 @@ public interface DepartmentRepository extends JpaRepository<Department, Long> {
     @Modifying
     @Query(value = "UPDATE department SET name=?1, address=?2, code=?3 WHERE id=?4 ", nativeQuery = true)
     void updateById( String name, String address, String code, Long id);
+
+
+     Department findByEmployeeId(Long id);
+
 }
