@@ -43,7 +43,7 @@ departmentFeignClient.addDepartment(departmentDto);
     }
 
 
-
+//Fetch Related Records From Both Employee entity and Department Entity
     public Map<String, Object> findByEmployeeAndDepartmentId(Long id) {
     DepartmentDto dpt = departmentFeignClient.findByEmployeeId(id);
     Employee employee = employeeRepository.findById(id).get();
