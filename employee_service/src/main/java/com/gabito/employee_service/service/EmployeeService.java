@@ -5,6 +5,7 @@ import com.gabito.employee_service.dto.DepartmentDto;
 import com.gabito.employee_service.dto.Request;
 import com.gabito.employee_service.model.Employee;
 import com.gabito.employee_service.repository.EmployeeRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -53,5 +54,13 @@ departmentFeignClient.addDepartment(departmentDto);
     relatedRecords.put("employee", employee);
 
     return relatedRecords;
+    }
+
+    @Transactional
+    public String deleteEmployee(Long id) {
+        String departmentDto = departmentFeignClient.deleteDepartment(id);
+         employeeRepository.deleteById(id);
+
+         return "Employee deleted";
     }
 }

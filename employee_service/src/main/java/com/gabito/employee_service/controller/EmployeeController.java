@@ -28,4 +28,9 @@ employeeService.addEmployee(request);
     public Map<String, Object> getEmployee(@PathVariable("id") Long id){
        return employeeService.findByEmployeeAndDepartmentId(id);
     }
+
+    @DeleteMapping("/delete/{id}")
+    public String deleteEmployee(@PathVariable("id") Long id){
+      return   employeeService.deleteEmployee(id);
+    }
 }

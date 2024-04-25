@@ -7,20 +7,26 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
 
 
-
-management:
-  tracing:
-    sampling:
-      probability: 1.0
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
 
   cloud:
     gateway:
-      routes:
-        - id: employee-service
-          uri: lb://employee-service
-          predicates:
-            - Path=/employee/**
-        - id: department-service
-          uri: lb://department-service
-          predicates:
-            - Path=/department/**
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+
+          routes:
+            - id: department_route
+              uri: lb://department-service
+              predicates:
+                - Path=/department/**
+
+            - id: employee_route
+              uri: lb://employee-service
+              predicates:
+                - Path=/employee/**
+
+

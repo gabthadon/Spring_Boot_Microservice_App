@@ -16,4 +16,6 @@ public interface DepartmentRepository extends JpaRepository<Department, Long> {
 
      Department findByEmployeeId(Long id);
 
+
+    void deleteByEmployeeId(Long id);
 }

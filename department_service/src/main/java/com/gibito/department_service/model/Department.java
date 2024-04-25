@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Entity
 public class Department {
 
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Long id;
     private String name;
