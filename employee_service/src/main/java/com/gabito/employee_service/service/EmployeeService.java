@@ -24,22 +24,6 @@ public class EmployeeService {
 
     public void addEmployee(Request request) {
 
-Employee emp = new Employee();
-
-emp.setName(request.getEmployeeName());
-emp.setAddress(request.getEmployeeAddress());
-emp.setEmail(request.getEmployeeEmail());
-
-employeeRepository.save(emp);
-
-        DepartmentDto departmentDto = new DepartmentDto();
-
-departmentDto.setEmployeeId(emp.getId());
-departmentDto.setName(request.getDepartmentName());
-departmentDto.setAddress(request.getDepartmentAddress());
-departmentDto.setCode(request.getDepartmentCode());
-
-departmentFeignClient.addDepartment(departmentDto);
 
     }
 
