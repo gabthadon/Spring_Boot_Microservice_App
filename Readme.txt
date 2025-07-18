@@ -54,7 +54,7 @@
 ### 🚀 Run All Services
 
 ```bash
-# Clone the repo
+# Clone the repo.
 git clone https://github.com/yourusername/Spring_Boot_Microservice_App.git
 cd Spring_Boot_Microservice_App
 
